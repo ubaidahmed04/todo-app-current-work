@@ -62,3 +62,53 @@ file.addEventListener("change",(e)=>{
   
   image.src = URL.createObjectURL(e.target.files[0])
 })
+
+// let UploadToStorage= (file)=>{
+//     return new Promise((resolve,reject)=>{
+  //         let fileName = file.name;
+
+//         const storageRef = ref(storage, `users/uid`);
+//         const uploadTask = uploadBytesResumable(storageRef, file);
+//         uploadTask.on('state_changed', 
+//   (snapshot) => {
+//     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//     console.log('Upload is ' + progress + '% done');
+//     switch (snapshot.state) {
+//       case 'paused':
+//         console.log('Upload is paused');
+//         break;
+//       case 'running':
+//         console.log('Upload is running');
+//         break;
+//     }
+//   }, 
+//   (error) => {
+//     reject(error)
+//   }, 
+//   () => {
+//     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+//         resolve(downloadURL)
+//     //   console.log('File available at', downloadURL);
+//     });
+//   }
+// );
+
+//     })
+// }
+
+
+
+// let  uploadFile = async() => {
+//  let file = document.getElementById("file")
+//  let Url = await UploadToStorage(file.files[0]);
+//  console.log("url---- >",Url)
+// }
+// let uploadBtn = document.getElementById("uploadFile")
+// uploadBtn.addEventListener('click' ,uploadFile)
+
+// let file = document.getElementById("file")
+// file.addEventListener('change',(e)=>{
+//     let image = document.getElementById("image")
+    
+//     image.src = URL.createObjectURL(e.target.files[0])
+// })
